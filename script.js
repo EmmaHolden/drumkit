@@ -1,3 +1,5 @@
+// This listens out for any of the following keys being pressed, then calls the relevant function. 
+
 document.addEventListener("keydown", (event) => {
     let key = event.key;
     if (key == "a"){boomFunc()} 
@@ -11,12 +13,7 @@ document.addEventListener("keydown", (event) => {
     else if (key == "l") {tomFunc()}
 })
 
-document.addEventListener("keyup", (event) => {
-    let drums = document.getElementsByTagName("button")
-    for (let i = 0; i < drums.length; i++) {
-        drums[i].style.backgroundColor = ""
-    }
-})
+// This listens out for the drums being clicked and then calls the relevant function just as above. 
 
 document.getElementById("boom").addEventListener("mousedown", () => {boomFunc()});
 document.getElementById("clap").addEventListener("mousedown", () => {clapFunc()});
@@ -28,12 +25,7 @@ document.getElementById("snare").addEventListener("mousedown", () => {snareFunc(
 document.getElementById("tink").addEventListener("mousedown", () => {tinkFunc()});
 document.getElementById("tom").addEventListener("mousedown", () => {tomFunc()});
 
-document.addEventListener("mouseup", (event) => {
-    let drums = document.getElementsByTagName("button")
-    for (let i = 0; i < drums.length; i++) {
-        drums[i].style.backgroundColor = ""
-    }
-})
+// These are the functions for each drum that makes the sound play and changes the colour.
 
 const boomFunc = () => {
     let sound = new Audio("sounds/boom.wav")
@@ -88,3 +80,15 @@ const tomFunc = () => {
     sound.play()
     document.getElementById("tom").style.backgroundColor = "yellow"
 }
+
+const released = () => {
+    let drums = document.getElementsByTagName("button")
+    for (let i = 0; i < drums.length; i++) {
+        drums[i].style.backgroundColor = ""
+    }
+}
+
+// To ensure the colour only flashes and doesn't change, this calls a function that returns the colour of the drum to normal when the key or mouse is released. 
+
+document.addEventListener("keyup", (event) => {released()})
+document.addEventListener("mouseup", (event) => {released()})
