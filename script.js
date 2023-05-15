@@ -39,54 +39,65 @@ document.addEventListener("keydown", (event) => {
     }
 })
 
-document.getElementById("boom").addEventListener("click", () => {
+document.addEventListener("keyup", (event) => {
+    let drums = document.getElementsByTagName("button")
+    for (let i = 0; i < drums.length; i++) {
+        drums[i].style.backgroundColor = ""
+    }
+})
+
+document.getElementById("boom").addEventListener("mousedown", () => {
     let sound = new Audio("sounds/boom.wav")
     sound.play()
 });
 
-document.getElementById("clap").addEventListener("click", () => {
+document.getElementById("clap").addEventListener("mousedown", () => {
     let sound = new Audio("sounds/clap.wav")
     sound.play()
 });
 
-document.getElementById("hiHat").addEventListener("click", () => {
+document.getElementById("hiHat").addEventListener("mousedown", () => {
     let sound = new Audio("sounds/hihat.wav")
     sound.play()
 });
 
-document.getElementById("openHat").addEventListener("click", () => {
+document.getElementById("openHat").addEventListener("mousedown", () => {
     let sound = new Audio("sounds/openhat.wav")
     sound.play()
 });
 
-document.getElementById("kick").addEventListener("click", () => {
+document.getElementById("kick").addEventListener("mousedown", () => {
     let sound = new Audio("sounds/kick.wav")
     sound.play()
 });
 
-document.getElementById("ride").addEventListener("click", () => {
+document.getElementById("ride").addEventListener("mousedown", () => {
     let sound = new Audio("sounds/ride.wav")
     sound.play()
 });
 
-document.getElementById("snare").addEventListener("click", () => {
+document.getElementById("snare").addEventListener("mousedown", () => {
     let sound = new Audio("sounds/snare.wav")
     sound.play()
 });
 
-document.getElementById("tink").addEventListener("click", () => {
+document.getElementById("tink").addEventListener("mousedown", () => {
     let sound = new Audio("sounds/tink.wav")
     sound.play()
 });
 
-document.getElementById("tom").addEventListener("click", () => {
+document.getElementById("tom").addEventListener("mousedown", () => {
     let sound = new Audio("sounds/tom.wav")
     sound.play()
 });
 
 const clicked = (x) => {
-    if (x.style.backgroundColor == "yellow") {
-        x.style.backgroundColor = ""
-    } else {x.style.backgroundColor = "yellow"}
-    
+    x.style.backgroundColor = "yellow"   
 }
+
+document.addEventListener("mouseup", (event) => {
+    let drums = document.getElementsByTagName("button")
+    for (let i = 0; i < drums.length; i++) {
+        drums[i].style.backgroundColor = ""
+    }
+})
