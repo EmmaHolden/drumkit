@@ -1,42 +1,14 @@
 document.addEventListener("keydown", (event) => {
     let key = event.key;
-    if (key == "a"){
-        let sound = new Audio("sounds/boom.wav")
-        sound.play()
-        clicked(document.getElementById("boom"))
-    } else if (key == "s"){
-        let sound = new Audio("sounds/clap.wav")
-        sound.play()
-        clicked(document.getElementById("clap"))
-    } else if (key == "d") {
-        let sound = new Audio("sounds/hihat.wav")
-        sound.play()
-        clicked(document.getElementById("hiHat"))
-    } else if (key == "f") {
-        let sound = new Audio("sounds/openhat.wav")
-        sound.play()
-        clicked(document.getElementById("openHat"))
-    } else if (key == "g") {
-        let sound = new Audio("sounds/kick.wav")
-        sound.play()
-        clicked(document.getElementById("kick"))
-    } else if (key == "h") {
-        let sound = new Audio("sounds/ride.wav")
-        sound.play()
-        clicked(document.getElementById("ride"))
-    } else if (key == "j") {
-        let sound = new Audio("sounds/snare.wav")
-        sound.play()
-        clicked(document.getElementById("snare"))
-    } else if (key == "k") {
-        let sound = new Audio("sounds/tink.wav")
-        sound.play()
-        clicked(document.getElementById("tink"))
-    } else if (key == "l") {
-        let sound = new Audio("sounds/tom.wav")
-        sound.play()
-        clicked(document.getElementById("tom"))
-    }
+    if (key == "a"){boomFunc()} 
+    else if (key == "s"){clapFunc()} 
+    else if (key == "d") {hiHatFunc()} 
+    else if (key == "f") {openHatFunc()}
+    else if (key == "g") {kickFunc()}
+    else if (key == "h") {rideFunc()} 
+    else if (key == "j") {snareFunc()} 
+    else if (key == "k") {tinkFunc()} 
+    else if (key == "l") {tomFunc()}
 })
 
 document.addEventListener("keyup", (event) => {
@@ -46,54 +18,15 @@ document.addEventListener("keyup", (event) => {
     }
 })
 
-document.getElementById("boom").addEventListener("mousedown", () => {
-    let sound = new Audio("sounds/boom.wav")
-    sound.play()
-});
-
-document.getElementById("clap").addEventListener("mousedown", () => {
-    let sound = new Audio("sounds/clap.wav")
-    sound.play()
-});
-
-document.getElementById("hiHat").addEventListener("mousedown", () => {
-    let sound = new Audio("sounds/hihat.wav")
-    sound.play()
-});
-
-document.getElementById("openHat").addEventListener("mousedown", () => {
-    let sound = new Audio("sounds/openhat.wav")
-    sound.play()
-});
-
-document.getElementById("kick").addEventListener("mousedown", () => {
-    let sound = new Audio("sounds/kick.wav")
-    sound.play()
-});
-
-document.getElementById("ride").addEventListener("mousedown", () => {
-    let sound = new Audio("sounds/ride.wav")
-    sound.play()
-});
-
-document.getElementById("snare").addEventListener("mousedown", () => {
-    let sound = new Audio("sounds/snare.wav")
-    sound.play()
-});
-
-document.getElementById("tink").addEventListener("mousedown", () => {
-    let sound = new Audio("sounds/tink.wav")
-    sound.play()
-});
-
-document.getElementById("tom").addEventListener("mousedown", () => {
-    let sound = new Audio("sounds/tom.wav")
-    sound.play()
-});
-
-const clicked = (x) => {
-    x.style.backgroundColor = "yellow"   
-}
+document.getElementById("boom").addEventListener("mousedown", () => {boomFunc()});
+document.getElementById("clap").addEventListener("mousedown", () => {clapFunc()});
+document.getElementById("hiHat").addEventListener("mousedown", () => {hiHatFunc()});
+document.getElementById("openHat").addEventListener("mousedown", () => {openHatFunc()});
+document.getElementById("kick").addEventListener("mousedown", () => {kickFunc()});
+document.getElementById("ride").addEventListener("mousedown", () => {rideFunc()});
+document.getElementById("snare").addEventListener("mousedown", () => {snareFunc()});
+document.getElementById("tink").addEventListener("mousedown", () => {tinkFunc()});
+document.getElementById("tom").addEventListener("mousedown", () => {tomFunc()});
 
 document.addEventListener("mouseup", (event) => {
     let drums = document.getElementsByTagName("button")
@@ -101,3 +34,57 @@ document.addEventListener("mouseup", (event) => {
         drums[i].style.backgroundColor = ""
     }
 })
+
+const boomFunc = () => {
+    let sound = new Audio("sounds/boom.wav")
+    sound.play()
+    document.getElementById("boom").style.backgroundColor = "yellow"
+}
+
+const clapFunc = () => {
+    let sound = new Audio("sounds/clap.wav")
+    sound.play()
+    document.getElementById("clap").style.backgroundColor = "yellow"
+}
+
+const hiHatFunc = () => {
+    let sound = new Audio("sounds/hihat.wav")
+    sound.play()
+    document.getElementById("hiHat").style.backgroundColor = "yellow"
+}
+
+const openHatFunc = () => {
+    let sound = new Audio("sounds/openhat.wav")
+    sound.play()
+    document.getElementById("openHat").style.backgroundColor = "yellow"
+}
+
+const kickFunc = () => {
+    let sound = new Audio("sounds/kick.wav")
+    sound.play()
+    document.getElementById("kick").style.backgroundColor = "yellow"
+}
+
+const rideFunc = () => {
+    let sound = new Audio("sounds/ride.wav")
+    sound.play()
+    document.getElementById("ride").style.backgroundColor = "yellow"
+}
+
+const snareFunc = () => {
+    let sound = new Audio("sounds/snare.wav")
+    sound.play()
+    document.getElementById("snare").style.backgroundColor = "yellow"
+}
+
+const tinkFunc = () => {
+    let sound = new Audio("sounds/tink.wav")
+    sound.play()
+    document.getElementById("tink").style.backgroundColor = "yellow"
+}
+
+const tomFunc = () => {
+    let sound = new Audio("sounds/tom.wav")
+    sound.play()
+    document.getElementById("tom").style.backgroundColor = "yellow"
+}
