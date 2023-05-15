@@ -1,0 +1,65 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button {
+    font-size: 24px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: white solid 8px;
+}
+
+.maincontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.topcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.bottomcontainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 200px;
+}
+
+#picture1 {
+    height: 20%;
+    width: 20%;
+}
+
+#boom {background-color: red}
+#clap {background-color: orange}
+#hiHat {background-color:deeppink}
+#openHat {background-color:mediumvioletred}
+#kick {background-color:lime}
+#ride {background-color:chartreuse}
+#snare {background-color: violet}
+#tink {background-color: aqua}
+#tom {background-color: fuchsia}
+
+@keyframes changeColor {
+    0% {color: red}
+    20% {color: white}
+    40% {color: lime}
+    60% {color: violet}
+    80% {color: aqua}
+    100% {color: fuchsia}
+  }
+  
+  h1 {
+    animation-name: changeColor;
+    animation-duration: 5s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+  }
