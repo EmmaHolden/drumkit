@@ -2,84 +2,38 @@
 
 document.addEventListener("keydown", (event) => {
     let key = event.key;
-    if (key == "a"){boomFunc()} 
-    else if (key == "s"){clapFunc()} 
-    else if (key == "d") {hiHatFunc()} 
-    else if (key == "f") {openHatFunc()}
-    else if (key == "g") {kickFunc()}
-    else if (key == "h") {rideFunc()} 
-    else if (key == "j") {snareFunc()} 
-    else if (key == "k") {tinkFunc()} 
-    else if (key == "l") {tomFunc()}
+    if (key == "a"){play("boom")} 
+    else if (key == "s"){play("clap")} 
+    else if (key == "d") {play("hiHat")} 
+    else if (key == "f") {play("openHat")}
+    else if (key == "g") {play("kick")}
+    else if (key == "h") {play("ride")} 
+    else if (key == "j") {play("snare")} 
+    else if (key == "k") {play("tink")} 
+    else if (key == "l") {play("tom")}
 })
 
 // This listens out for the drums being clicked and then calls the relevant function just as above. 
 
-document.getElementById("boom").addEventListener("mousedown", () => {boomFunc()});
-document.getElementById("clap").addEventListener("mousedown", () => {clapFunc()});
-document.getElementById("hiHat").addEventListener("mousedown", () => {hiHatFunc()});
-document.getElementById("openHat").addEventListener("mousedown", () => {openHatFunc()});
-document.getElementById("kick").addEventListener("mousedown", () => {kickFunc()});
-document.getElementById("ride").addEventListener("mousedown", () => {rideFunc()});
-document.getElementById("snare").addEventListener("mousedown", () => {snareFunc()});
-document.getElementById("tink").addEventListener("mousedown", () => {tinkFunc()});
-document.getElementById("tom").addEventListener("mousedown", () => {tomFunc()});
+document.getElementById("boom").addEventListener("mousedown", () => {play("boom")});
+document.getElementById("clap").addEventListener("mousedown", () => {play("clap")});
+document.getElementById("hiHat").addEventListener("mousedown", () => {play("hiHat")});
+document.getElementById("openHat").addEventListener("mousedown", () => {play("openHat")});
+document.getElementById("kick").addEventListener("mousedown", () => {play("kick")});
+document.getElementById("ride").addEventListener("mousedown", () => {play("ride")});
+document.getElementById("snare").addEventListener("mousedown", () => {play("snare")});
+document.getElementById("tink").addEventListener("mousedown", () => {play("tink")});
+document.getElementById("tom").addEventListener("mousedown", () => {play("tom")});
 
-// These are the functions for each drum that makes the sound play and changes the colour.
+// This function makes the sound play and changes the colour.
 
-const boomFunc = () => {
-    let sound = new Audio("sounds/boom.wav")
+const play = (soundType) => {
+    let sound = new Audio(`sounds/${soundType}.wav`)
     sound.play()
-    document.getElementById("boom").style.backgroundColor = "yellow"
+    document.getElementById(soundType).style.backgroundColor = "yellow"
 }
 
-const clapFunc = () => {
-    let sound = new Audio("sounds/clap.wav")
-    sound.play()
-    document.getElementById("clap").style.backgroundColor = "yellow"
-}
-
-const hiHatFunc = () => {
-    let sound = new Audio("sounds/hihat.wav")
-    sound.play()
-    document.getElementById("hiHat").style.backgroundColor = "yellow"
-}
-
-const openHatFunc = () => {
-    let sound = new Audio("sounds/openhat.wav")
-    sound.play()
-    document.getElementById("openHat").style.backgroundColor = "yellow"
-}
-
-const kickFunc = () => {
-    let sound = new Audio("sounds/kick.wav")
-    sound.play()
-    document.getElementById("kick").style.backgroundColor = "yellow"
-}
-
-const rideFunc = () => {
-    let sound = new Audio("sounds/ride.wav")
-    sound.play()
-    document.getElementById("ride").style.backgroundColor = "yellow"
-}
-
-const snareFunc = () => {
-    let sound = new Audio("sounds/snare.wav")
-    sound.play()
-    document.getElementById("snare").style.backgroundColor = "yellow"
-}
-
-const tinkFunc = () => {
-    let sound = new Audio("sounds/tink.wav")
-    sound.play()
-    document.getElementById("tink").style.backgroundColor = "yellow"
-}
-
-const tomFunc = () => {
-    let sound = new Audio("sounds/tom.wav")
-    sound.play()
-    document.getElementById("tom").style.backgroundColor = "yellow"
-}
+// To ensure the colour only flashes and doesn't change, this function returns the colour of the drum to normal when the key or mouse is released. 
 
 const released = () => {
     let drums = document.getElementsByTagName("button")
@@ -87,8 +41,6 @@ const released = () => {
         drums[i].style.backgroundColor = ""
     }
 }
-
-// To ensure the colour only flashes and doesn't change, this calls a function that returns the colour of the drum to normal when the key or mouse is released. 
 
 document.addEventListener("keyup", (event) => {released()})
 document.addEventListener("mouseup", (event) => {released()})
