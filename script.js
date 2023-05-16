@@ -1,4 +1,4 @@
-// This listens out for any of the following keys being pressed, then calls the relevant function. 
+// This listens out for any of the following keys being pressed, then calls the play function. 
 
 document.addEventListener("keydown", (event) => {
     let key = event.key;
@@ -13,7 +13,7 @@ document.addEventListener("keydown", (event) => {
     else if (key == "l") {play("tom")}
 })
 
-// This listens out for the drums being clicked and then calls the relevant function just as above. 
+// This listens out for the drums being clicked and then calls the play function just as above. 
 
 document.getElementById("boom").addEventListener("mousedown", () => {play("boom")});
 document.getElementById("clap").addEventListener("mousedown", () => {play("clap")});
